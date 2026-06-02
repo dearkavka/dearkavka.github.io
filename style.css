@@ -1,0 +1,459 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Share+Tech+Mono&display=swap');
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes barPulse {
+from {
+    border-color: rgba(224, 216, 196, 0.6);
+  }
+  to {
+    border-color: rgba(224, 216, 196, 1);
+    }
+}
+
+@keyframes pulse {
+  from { opacity: 0.4; }
+  to   { opacity: 0.8; }
+}
+
+
+:root {
+  --smoke: #D7E2E3;
+  --bg: #0c0807;
+  --hl: #fcefc4;
+  --bghl1:#5F5DA2;
+  --kav: #E0D8C4;
+  --smokehl: #DEDAE3;
+}
+
+
+html, body {
+  height: 100%;
+  background-color: rgb(10,6,3);
+  margin: 0;
+  padding: 0;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* le sectione */
+.section {
+  opacity: 1;
+  position: relative; 
+  padding: 80px 15%;
+  background: rgba(10,6,3,0.85);
+  border-top: 4px solid var(--kav);
+  border-bottom: 0px solid var(--kav);
+  overflow: hidden;
+  animation: pulse 2s infinite alternate;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 40px;
+  height: 100%;
+  background: var(--kav);
+  transform: skewX(-20deg);
+  opacity: 1;
+  animation: pulse 2s infinite alternate;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -50px;   
+  width: 40px;
+  height: 100%;
+  background: var(--kav);
+  transform: skewX(20deg);   
+  opacity: 1;
+  animation: pulse 2s infinite alternate;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#potato {
+  margin: 0;
+  display: block;
+  width: 100%;
+  font-size: 2.5rem;
+  color: var(--kav);
+}
+
+
+.project-card {
+  position: relative;
+  z-index: 660;
+  width: fit-content;
+  margin: 0 auto 40px auto;
+  padding: 16px 28px;
+  text-align: center;
+  width: 300px;
+  background-color: #060308; /* solid color */
+  border: 1px solid rgba(224, 216, 196, 0.4);
+
+  transition:
+  border-color 0.25s ease,
+  background-color 0.25s ease;
+}
+
+.project-card:hover {
+ z-index: 660;
+  border-color: var(--kav);
+}
+
+.project-card:hover #projectsdesc {
+  opacity: 1;
+  max-height: 100px;
+  z-index: 660;
+ }
+
+.project-card.open #projectsdesc {
+  opacity: 1;
+  max-height: 100px; /* same as hover */
+  z-index: 660;
+}
+
+#projectsdesc {
+  margin-top: 8px;
+  font-size: 1.2rem;
+  color: var(--smoke);
+
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+
+  transition:
+    opacity 0.25s ease,
+    max-height 0.25s ease;
+}
+
+#about {
+  opacity: 1;
+  z-index: 60;
+  margin-top: -150px;
+  color: var(--smoke);
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  text-align: center;
+  position: relative;
+}
+
+
+
+#aboutdesc {
+  opacity: 1;
+  z-index: 60;
+  margin-top: -50px;
+  color: var(--smoke);
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+  text-align: center;
+  position: relative;
+  text-color; white;
+}
+
+
+#pets {
+  opacity: 1;
+  margin-top: 0;
+  color: var(--smoke);
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+#contact {
+  opacity: 1;
+  margin-top: 0;
+  color: var(--smoke);
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+/* meh cpu cat */
+.cpucat {
+  position: absolute;
+  width: 180px;
+  opacity: 0.25;
+  animation: spin 40s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cpucat-left {
+  left: 40px;
+  top: 40px;
+}
+
+.cpucat-right {
+  right: 40px;
+  bottom: 40px;
+  animation-direction: reverse;
+}
+
+
+.hero {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+
+  background: rgba(10, 6, 3, 0.95);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-panel {
+  text-align: center;
+  transform: translateY(-10px);
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-family: 'Uncial Antiqua', serif;
+  font-size: 3.4rem;
+  font-weight: normal;
+
+  color: var(--smoke);
+  margin-bottom: 10px;
+}
+
+.hero-sub {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.05rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: var(--smokehl);
+  opacity: 0.85;
+}
+
+.dropdown-card {
+  width: 320px;                
+  max-width: 90vw;              
+  margin: 20px auto;
+  padding: 14px 22px;           
+ background-color: #060308;
+  border: 1px solid rgba(224, 216, 196, 0.4);
+  cursor: pointer;
+  border-radius: 6px;
+  transition:
+    border-color 0.3s ease,
+    width 0.45s ease,
+    padding 0.3s ease;
+}
+
+
+.dropdown-card.open {
+  width: 1100px;          
+  max-width: 1100px;   
+}
+
+.dropdown-title {
+  margin: 0;                    
+  padding: 0;
+  color: var(--kav);
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  user-select: none;
+  line-height: 1.2;
+}
+
+.dropdown-desc {
+  margin-top: 8px;
+  font-size: 1.2rem;
+  color: var(--smoke);
+
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+
+  transition:
+    opacity 0.25s ease,
+    max-height 0.25s ease;
+}
+
+
+.dropdown-card.open .dropdown-desc {
+  opacity: 1;
+  max-height: none;
+}
+
+.dropdown-card:not(.open) .dropdown-desc {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+
+  .dropdown-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 14px 0;
+    border-radius: 0;  
+  }
+
+  .dropdown-card.open {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .dropdown-title {
+    font-size: 1.5rem;
+  }
+
+  .dropdown-desc {
+    font-size: 1.05rem;
+  }
+}
+
+.dropdown-desc img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 12px auto;
+  border-radius: 6px;
+}
+
+.dropdown-desc.pets {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* each cat card */
+.pet {
+  width: 220px;
+  text-align: center;
+  color: var(--smoke);
+}
+
+/* cat images */
+.pet img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;   /* prevents stretching */
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+/* cat text */
+.pet p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.dropdown-desc.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* horizontal centering */
+  gap: 14px;             /* spacing between items */
+  text-align: center;
+}
+
+.dropdown-desc.contact a {
+  color: var(--hl);
+}
+
+.contact-item span {
+  color: var(--kav);   /* change this to whatever color you like */
+  font-weight: 600;     /* optional: make it stand out */
+}
+
+
+/* each item: emoji + label + links */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;                  /* space between emoji / label / link */
+}
+
+/* label text (Email / Phone / Socials) */
+.contact-item span {
+  color: var(--bghl);
+  font-weight: 600;
+}
+
+/* links style */
+.contact-item a {
+  color: var(--hl);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+  color: var(--kav);
+}
+
+/* socials links row inside one item */
+.contact-item.socials {
+  gap: 8px;                  /* space between social links */
+}
+
+/* container: one horizontal row, centered */
+.dropdown-desc.contact {
+  display: flex;
+  flex-direction: row;       /* force horizontal layout */
+  justify-content: center;   /* center the whole row */
+  align-items: center;       /* vertical alignment */
+  gap: 40px;                 /* space between Email / Phone / Socials */
+  flex-wrap: wrap;           /* wrap on small screens */
+  text-align: center;
+}
+
+/* each contact item (emoji + label + link(s)) */
+.contact-item {
+  display: flex;
+  flex-direction: row;       /* horizontal inside each item */
+  align-items: center;
+  gap: 6px;                  /* spacing inside the item */
+}
+
+/* label text (Email / Phone / Socials) */
+.contact-item span {
+  color: white;
+  font-weight: 600;
+}
+
+/* links style */
+.contact-item a {
+  color: var(--hl);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+  color: var(--kav);
+}
+
+/* social links spacing */
+.contact-item.socials a {
+  margin-left: 6px;           /* space between social links */
+}
