@@ -1,0 +1,146 @@
+
+<head>
+<link href="style.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Levi's Website</title>
+</head>
+
+  <header class="hero">
+    <img class="cpucat cpucat-left" src="images/cpucat.png" alt="">
+    <img class="cpucat cpucat-right" src="images/cpucat.png" alt="">
+
+    <div class="hero-panel">
+   <h1>Levi Brook</h1>
+    <p class="hero-sub">
+      Student in Computer Science, Product Design & Business Studies
+    </p>
+  </div>
+  </header>
+
+
+ <main>
+
+    <section class="section work"> 
+    </section>
+ </main>
+ <main>
+<div class="dropdown-card">
+  <h2 class="dropdown-title">𐀪 About Me</h2>
+  <div class="dropdown-desc">
+    blank for now, about me needs to be written.
+  </div>
+</div>
+
+<div class="dropdown-card">
+  <h2 class="dropdown-title">⚙ Projects</h2>
+  <div class="dropdown-desc">
+    blank
+  </div>
+</div>
+
+<div class="dropdown-card">
+  <h2 class="dropdown-title">₍^. .^₎ My Pets</h2><div class="dropdown-desc pets">
+  <div class="pet">
+    <img src="images/ash1.jpg" alt="Ash">
+    <p><strong>Ash</strong><br>Very silly. Loves any attention he can get.</p>
+  </div>
+
+  <div class="pet">
+    <img src="images/ash2.jpg" alt="Ash again">
+    <p><strong>Ash</strong><br>He's very hard to take pictures of.</p>
+  </div>
+
+  <div class="pet">
+    <img src="images/max1.jpg" alt="Max">
+    <p><strong>Max</strong><br>Posh cat.</p>
+  </div>
+
+  <div class="pet">
+    <img src="images/max2.jpg" alt="Max">
+    <p><strong>Max</strong><br>He literally sleeps all day.</p>
+  </div>
+
+  <div class="pet">
+    <img src="images/brianna1.jpg" alt="Brianna">
+    <p><strong>Brianna</strong><br>She's very small and shy but her claws are sharp.</p>
+  </div>
+
+  <div class="pet">
+    <img src="images/brianna2.jpg" alt="Brian">
+    <p><strong>Brianna</strong><br>Follows me around everywhere.</p>
+  </div>
+
+  <div class="pet">
+    <img src="images/jude1.jpg" alt="Jude">
+    <p><strong>Jude</strong><br>Jude hates being left alone.</p>
+  </div>
+
+  <div class="pet">
+    <img src="images/jude2.jpg" alt="Jude">
+    <p><strong>Jude</strong><br>Jude as a puppy.</p>
+  </div>
+
+  <div class="pet">
+    <img src="images/buttons1.jpg" alt="Buttons">
+    <p><strong>Buttons</strong><br>Buttons does his own thing most of the day.</p>
+  </div>
+
+  <div class="pet">
+    <img src="images/buttons2.jpg" alt="Buttons">
+    <p><strong>Buttons</strong><br>...</p>
+  </div>
+</div>
+</div>
+
+<div class="dropdown-card">
+  <h2 class="dropdown-title">💬 Contact Information</h2>
+  <div class="dropdown-desc contact">
+
+    <div class="contact-item">
+      📧 <span>Email:</span>
+      <a href="mailto:yourname@email.com">yourname@email.com</a>
+    </div>
+
+    <div class="contact-item">
+      📱 <span>Phone:</span>
+      <a href="tel:+441234567890">+44 1234 567890</a>
+    </div>
+
+    <div class="contact-item">
+      🌐 <span>Socials:</span>
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a> ·
+      <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a> ·
+      <a href="https://instagram.com/yourusername" target="_blank">Instagram</a>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+
+</main>
+
+
+<script>
+const cards = document.querySelectorAll('.dropdown-card');
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    cards.forEach(c => {
+      if (c !== card) c.classList.remove('open');
+    });
+    card.classList.toggle('open');
+  });
+});
+
+// Prevent contact links from closing the dropdown
+document.querySelectorAll('.dropdown-card .contact-item a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.stopPropagation();
+  });
+});
+</script>
+
+
